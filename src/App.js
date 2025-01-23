@@ -32,7 +32,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <main>{loading ? <Loader /> : <Quotes quotes={quotes} />}</main>
+      <main>{loading ? <Loader /> : <Quotes quotes={quotes} categories={categories} category={category}/>}</main>
       <Footer />
     </div>
   );
