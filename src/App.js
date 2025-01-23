@@ -29,7 +29,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <main></main>
+      <main>{loading ? <Loader /> : JSON.stringify(quotes)}</main>
       <Footer />
     </div>
   );
