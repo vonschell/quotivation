@@ -9,9 +9,12 @@ function App() {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState("All");
+  const [favoriteQuotes, setFavoriteQuotes] = useState([]);
   const quotesUrl =
     "https://gist.githubusercontent.com/skillcrush-curriculum/6365d193df80174943f6664c7c6dbadf/raw/1f1e06df2f4fc3c2ef4c30a3a4010149f270c0e0/quotes.js";
   const categories = ["All", "Leadership", "Empathy", "Motivation", "Learning", "Success", "Empowerment"];
+
+  const maxFaves = 3;
 
   const fetchQuotes = async () => {
     try {
@@ -35,6 +38,11 @@ function App() {
     setCategory(e.target.value);
   };
 
+  const addToFavorites = (quoteId) => {
+    const selectedQuote = quotes.find((quote) => quote.id === quoteId);
+    console.log(selectedQuote);
+  }
+
   return (
     <div className='App'>
       <Header />
@@ -44,6 +52,7 @@ function App() {
         ) : (
           <Quotes
             filteredQuotes={filteredQuotes}
+            addToFavorites={addToFavorites}
             categories={categories}
             category={category}
             handleCategoryChange={handleCategoryChange}
