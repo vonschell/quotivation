@@ -7,6 +7,7 @@ function Quotes({ quotes, categories, category }) {
         <section className='all-quotes'>
             <div className='quotes wrapper'>
                 <div className='category-header'>
+                <p>Browse through your collection of quotes.</p>
                 <CategoryForm categories={categories} selectedCategory={category} />
                 </div>
                 {quotes.map((quote) => (
