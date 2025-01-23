@@ -42,7 +42,8 @@ function App() {
         {loading ? (
           <Loader />
         ) : (
-          <Quotes filteredQuotes={filteredQuotes}
+          <Quotes
+            filteredQuotes={filteredQuotes}
             categories={categories}
             category={category}
             handleCategoryChange={handleCategoryChange}
@@ -53,5 +54,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
