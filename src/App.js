@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Loader } from "react-feather";
+import FavoriteQuotes from "./components/quotes/FavoriteQuotes";
 import Quotes from "./components/quotes/Quotes";
 import "./App.css";
 
@@ -58,20 +59,7 @@ function App() {
     <div className='App'>
       <Header />
       <main>
-        <section className='favorite-quotes'>
-          <div className='wrapper quotes'>
-            <h3>Top 3 favorite quotes</h3>
-            {favoriteQuotes.length > 0 && JSON.stringify(favoriteQuotes)}
-
-            <div className='favorite-quotes-description'>
-              <p>
-                You can add up to three favorites by selecting from the options below.
-                <br />
-                Once you choose, they will appear here. 
-                </p>
-            </div>
-          </div>
-        </section>
+        <FavoriteQuotes favoriteQuotes={favoriteQuotes} maxFaves={maxFaves} />
 
         {loading ? (
           <Loader />

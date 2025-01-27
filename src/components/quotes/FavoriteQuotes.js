@@ -18,3 +18,5 @@ function FavoriteQuotes({ FavoriteQuotes, maxFaves }) {
             </section>
     )
 }
+
+export default FavoriteQuotes;
