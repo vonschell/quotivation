@@ -2,7 +2,7 @@ import React from "react";
 import QuoteCard from "./QuoteCard";
 import CategoryForm from "./CategoryForm";
 
-function Quotes({ filteredQuotes, addToFavorites, category, categories, handleCategoryChange }) {
+function Quotes({ filteredQuotes, addToFavorites, category, favoriteQuotes, categories, handleCategoryChange }) {
     return (
         <section className='all-quotes'>
             <div className='quotes wrapper'>
