@@ -41,6 +41,7 @@ h3 {
   align-items: center;
   margin: 0 auto;
   height: 100vh;
+  background: #d9f2e5;
 }
 
 .wrapper {
@@ -55,7 +56,7 @@ main {
 
 header {
   width: 100%;
-  background: #ffe7a8;
+  background: #f0e6f6;
 }
 
 header h1 {
@@ -84,6 +85,7 @@ header h2 {
 footer {
   text-align: center;
   padding: 2rem 0;
+  background: #fce4d4;
 }
 
 .message {
@@ -96,7 +98,7 @@ footer {
   text-align: center;
   font-size: 1.25rem;
   background-color: #fff2cf;
-  color: #ad7000;
+  color: black;
   border: 2px solid #ad7000;
   padding: 3rem 1.5rem;
   border-radius: 14px;
@@ -130,7 +132,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  background: #ffe7a8;
+  background: #d9f2e5;
 }
 
 .favorite-quotes .quotes h3 {
@@ -147,9 +149,9 @@ footer {
   flex-wrap: wrap;
   border: 2px solid #ad7000;
   border-radius: 26px;
-  background-color: transparent;
+  background-color: #f0e6f6;
   font-size: 2rem;
-  color: #ad7000;
+  color: #000;
 }
 
 /* .favorite-quotes .quote-card::before {
@@ -186,7 +188,7 @@ footer {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #ad7000;
+  color: #000;
 }
 
 .favorite-quotes .favorite-quotes-description p {
@@ -286,7 +288,7 @@ footer {
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 26px;
-  background-color: #88bbc1;
+  background-color: #f7e6d7;
   font-size: 1.75rem;
 }
 
@@ -299,7 +301,7 @@ footer {
 }
 
 .quote-card .close-quote {
-  color: #ad7000;
+  color: black;
   transition: 0.1s;
   font-size: 1.4rem;
   font-weight: 700;
@@ -309,7 +311,7 @@ footer {
   transform: scale(1.2);
 }
 
-.quote-card div > h3 {
+.quote-card div>h3 {
   margin: 3rem 0;
   font-weight: 400;
 }
@@ -334,6 +336,7 @@ footer {
   text-align: left;
   font-size: 1.5rem;
   font-weight: 700;
+  color: black;
 }
 
 .quote-card .add-favorite {
@@ -364,6 +367,7 @@ footer {
     opacity: 0;
     transform: translateY(-3rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -374,17 +378,21 @@ footer {
   .all-quotes .quotes {
     justify-content: space-between;
   }
+
   .all-quotes .quote-card {
     width: calc(50% - 2.5rem);
   }
+
   .quotes .category-header {
     justify-content: space-between;
   }
+
   .favorite-quotes .quote-card h3 {
     width: 70%;
     line-height: 44px;
     font-size: 2rem;
   }
+
   .favorite-quotes .quote-card p {
     text-align: center;
     font-size: 1.5rem;
@@ -396,13 +404,16 @@ footer {
   .all-quotes .quotes {
     justify-content: flex-start;
   }
+
   .all-quotes .quote-card {
     width: calc(33% - 1.42rem);
   }
+
   .category-header {
     justify-content: space-between;
     align-items: flex-start;
   }
+
   .quotes .category-header p {
     text-align: left;
   }
