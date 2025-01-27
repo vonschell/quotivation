@@ -41,25 +41,28 @@ function App() {
 
   const addToFavorites = (quoteId) => {
     const selectedQuote = quotes.find((quote) => quote.id === quoteId);
-    
+
     const alreadyFavorite = favoriteQuotes.find((favorite) => favorite.id === selectedQuote.id);
     console.log(alreadyFavorite);
-    
-    if (alreadyFavorite) {
-    console.log("You already favorited this quote!");
-  } else if (favoriteQuotes.length < maxFaves) {
-    console.log("Added to Favorites!");
-    setFavoriteQuotes([...favoriteQuotes, selectedQuote]);
-  } else {
-    console.log("Max number of favorite quotes reached. Remove one to add another.");
-  }
-};
 
+    if (alreadyFavorite) {
+      console.log("You already favorited this quote!");
+    } else if (favoriteQuotes.length < maxFaves) {
+      console.log("Added to Favorites!");
+      setFavoriteQuotes([...favoriteQuotes, selectedQuote]);
+    } else {
+      console.log("Max number of favorite quotes reached. Remove one to add another.");
+    }
+  };
+
+  const removeFromFavorites = (quoteId) => {
+    const updatedFavorites = favoriteQuotes.filter((quote) => quote.id !== quoteId);
+  }
   return (
     <div className='App'>
       <Header />
       <main>
-        <FavoriteQuotes favoriteQuotes={favoriteQuotes} maxFaves={maxFaves} />
+        <FavoriteQuotes favoriteQuotes={favoriteQuotes} maxFaves={maxFaves} removeFromFavorites={removeFromFavorites} />
 
         {loading ? (
           <Loader />
