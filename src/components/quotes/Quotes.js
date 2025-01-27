@@ -13,7 +13,7 @@ function Quotes({ filteredQuotes, addToFavorites, category, categories, handleCa
                 </div>
 
                 {filteredQuotes.map((quote) => (
-                    <QuoteCard key={quote.id} quote={quote} addToFavorites={addToFavorites} />
+                    <QuoteCard key={quote.id} quote={quote} addToFavorites={addToFavorites} favoriteQuotes={favoriteQuotes} />
                 ))}
             </div>
         </section>

@@ -33,8 +33,7 @@ function App() {
     fetchQuotes();
   }, []);
 
-  const filteredQuotes = category !== "All"
-    ? quotes.filter((quote) => quote.categories.includes(category)) : quotes;
+  const filteredQuotes = category !== "All" ? quotes.filter((quote) => quote.categories.includes(category)) : quotes;
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);

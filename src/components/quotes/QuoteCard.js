@@ -6,7 +6,7 @@ function QuoteCard({ quote, addToFavorites, favoriteQuotes }) {
 
   const faveStyle = alreadyFavorite ? "#333" : "";
   return (
-    <article className={'quote-card'}>
+    <article className='quote-card'>
       <div>
         <p className='categories'>
           {quote.categories.map((category) => (
