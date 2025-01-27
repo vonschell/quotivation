@@ -40,11 +40,11 @@ function App() {
 
   const addToFavorites = (quoteId) => {
     const selectedQuote = quotes.find((quote) => quote.id === quoteId);
-  
-  const alreadyFavorite = favoriteQuotes.find((favorite) => favorite.id === selectedQuote.id);
-  console.log(alreadyFavorite);
-
-  if (alreadyFavorite) {
+    
+    const alreadyFavorite = favoriteQuotes.find((favorite) => favorite.id === selectedQuote.id);
+    console.log(alreadyFavorite);
+    
+    if (alreadyFavorite) {
     console.log("You already favorited this quote!");
   } else if (favoriteQuotes.length < maxFaves) {
     console.log("Added to Favorites!");
@@ -79,8 +79,8 @@ function App() {
           <Quotes
             filteredQuotes={filteredQuotes}
             addToFavorites={addToFavorites}
-            categories={categories}
             category={category}
+            categories={categories}
             handleCategoryChange={handleCategoryChange}
           />
         )}
