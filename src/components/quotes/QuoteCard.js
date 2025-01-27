@@ -6,7 +6,7 @@ function QuoteCard({ quote, addToFavorites, favoriteQuotes }) {
 
   const faveStyle = alreadyFavorite ? "#333" : "";
   return (
-    <article className={"quote-card"}>
+    <article className={'quote-card'}>
       <div>
         <p className='categories'>
           {quote.categories.map((category) => (
@@ -20,7 +20,7 @@ function QuoteCard({ quote, addToFavorites, favoriteQuotes }) {
       <footer>
         <p className='author'>{quote.author}</p>
         <p className='add-favorite' onClick={() => addToFavorites(quote.id)}>
-          <Heart />
+          <Heart style={{ fill: faveStyle }} />
         </p>
       </footer>
     </article>

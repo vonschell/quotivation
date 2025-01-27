@@ -33,7 +33,8 @@ function App() {
     fetchQuotes();
   }, []);
 
-  const filteredQuotes = category !== "All" ? quotes.filter((quote) => quote.categories.includes(category)) : quotes;
+  const filteredQuotes = category !== "All"
+    ? quotes.filter((quote) => quote.categories.includes(category)) : quotes;
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
@@ -43,21 +44,25 @@ function App() {
     const selectedQuote = quotes.find((quote) => quote.id === quoteId);
 
     const alreadyFavorite = favoriteQuotes.find((favorite) => favorite.id === selectedQuote.id);
-    console.log(alreadyFavorite);
 
     if (alreadyFavorite) {
-      console.log("You already favorited this quote!");
-    } else if (favoriteQuotes.length < maxFaves) {
-      console.log("Added to Favorites!");
-      setFavoriteQuotes([...favoriteQuotes, selectedQuote]);
+      removeFromFavorites(quoteId);
+
     } else {
-      console.log("Max number of favorite quotes reached. Remove one to add another.");
+      if (favoriteQuotes.length < maxFaves) {
+        console.log("Added to Favorites!");
+        setFavoriteQuotes([...favoriteQuotes, selectedQuote]);
+      } else {
+        console.log("Max number of favorite quotes reached. Remove one to add another.");
+      }
     }
   };
 
   const removeFromFavorites = (quoteId) => {
     const updatedFavorites = favoriteQuotes.filter((quote) => quote.id !== quoteId);
-  }
+    setFavoriteQuotes(updatedFavorites);
+  };
+
   return (
     <div className='App'>
       <Header />
@@ -70,6 +75,7 @@ function App() {
           <Quotes
             filteredQuotes={filteredQuotes}
             addToFavorites={addToFavorites}
+            favoriteQuotes={favoriteQuotes}
             category={category}
             categories={categories}
             handleCategoryChange={handleCategoryChange}
