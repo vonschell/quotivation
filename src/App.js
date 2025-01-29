@@ -70,9 +70,10 @@ function App() {
   const removeMessage = () => {
     setShowMessage(false);
   };
-  
+
   return (
     <div className='App'>
+      {showMessage && <Message messageText={messageText} removeMessage={removeMessage} />}
       <Header />
       <main>
         <FavoriteQuotes favoriteQuotes={favoriteQuotes} maxFaves={maxFaves} removeFromFavorites={removeFromFavorites} />

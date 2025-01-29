@@ -1,10 +1,11 @@
 import React from "react";
 
-const Message = () => {
+const Message = ({ messageText, removeMessage }) => {
     return (
-        <div className="message">
+        <div className='message'>
             <p>{messageText}</p>
-            <span className="close-message">
+
+            <span className='close-message' onClick={removeMessage}>
                 x
             </span>
         </div>
