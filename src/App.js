@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { Loader } from "react-feather";
 import FavoriteQuotes from "./components/quotes/FavoriteQuotes";
 import Quotes from "./components/quotes/Quotes";
+import Message from "./components/Message";
 import "./App.css";
 
 function App() {
@@ -51,10 +52,12 @@ function App() {
 
     } else {
       if (favoriteQuotes.length < maxFaves) {
-        console.log("Added to Favorites!");
+        setMessageText("Added to Favorites!");
+        setShowMessage(true);
         setFavoriteQuotes([...favoriteQuotes, selectedQuote]);
       } else {
-        console.log("Max number of favorite quotes reached. Remove one to add another.");
+        setMessageText("Max number of favorite quotes reached. Remove one to add another.");
+        setShowMessage(true);
       }
     }
   };
@@ -63,7 +66,11 @@ function App() {
     const updatedFavorites = favoriteQuotes.filter((quote) => quote.id !== quoteId);
     setFavoriteQuotes(updatedFavorites);
   };
-
+  
+  const removeMessage = () => {
+    setShowMessage(false);
+  };
+  
   return (
     <div className='App'>
       <Header />
