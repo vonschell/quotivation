@@ -154,7 +154,7 @@ footer {
   color: #000;
 }
 
-/* .favorite-quotes .quote-card::before {
+ .favorite-quotes .quote-card::before {
   content: "#" attr(data-list-position);
   padding: 0 1rem;
   position: absolute;
@@ -168,7 +168,7 @@ footer {
   line-height: 20px;
   font-weight: 700;
   background-color: #ffe7a8;
-} */
+} 
 
 .favorite-quotes .quote-card h3 {
   width: 90%;
